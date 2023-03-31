@@ -1,0 +1,130 @@
+*, *before, *:after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    width: 100px;
+    text-align: center;
+
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+    color: rgb(250, 250, 250);
+    font-family: monospace;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 940px;
+    gap: 5px;
+    margin: auto;
+    justify-items: center;
+    align-items: center;
+
+}
+
+p {
+    width: 100px;
+    margin-left: -220px;
+    margin-top: 20px;
+}
+
+
+
+.card {
+    height: 250px;
+    width: 300px;
+    overflow: hidden;
+    margin: auto;
+    padding: 30px 30px;
+    border-radius: 2%;
+    border: 1px solid white;
+    transition: all .4s ease-in-out;
+    box-shadow: 0px 1px 5px 0px black;
+    text-align: center;
+    background: linear-gradient(-135deg, rgba(206, 209, 27, 0.788), rgb(11, 100, 31));
+}
+
+.card:hover{
+    height: 500px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px black;
+}
+
+.card-encabezado img{
+    position: relative;
+    border-radius: 50%;
+    display: block;
+    height: 200px;
+    width: 200px;
+    border-top: 8px solid white;
+    border-bottom: 8px solid white;
+    object-fit: cover;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+.card-encabezado {
+    position: relative;
+}
+
+.card-encabezado::before, .card-encabezado::after {
+    content: '';
+    position: absolute;
+    opacity: .7;
+}
+
+.card-encabezado::after {
+    border-radius: 50%;
+    z-index: 20;
+    background-color: rgba(13, 122, 18, 0.623);
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 25px;
+}
+
+.card-encabezado::before {
+    width: 70px;
+    height: 70px;
+    bottom: 0;
+    left: 10px;
+    border-radius: 20px;
+    background-color: rgb(0, 0, 0);
+    transform: rotate(120deg);
+}
+
+.desplazar {
+    opacity: 0;
+    transition: all .5s ease;
+    transform: translate(-45px);
+}
+
+.card:hover .desplazar{
+    transform: translate(0px);
+    opacity: 1;
+}
+
+.desplazar:nth-child(1){
+    transition-delay: .1s;
+}
+.desplazar:nth-child(2){
+    transition-delay: .2s;
+}
+.desplazar:nth-child(3){
+    transition-delay: .4s;
+}
